@@ -82,7 +82,7 @@ void app_main(void)
     timer1 = xTimerCreate(
         "Timer 1",
         pdMS_TO_TICKS(TIMER_1_PERIOD),
-        pdTRUE, // Auto reload
+        pdTRUE, 
         timer1_id,
         vTimerCallback);
 
@@ -91,7 +91,7 @@ void app_main(void)
     timer2 = xTimerCreate(
         "Timer 2",
         pdMS_TO_TICKS(TIMER_2_PERIOD),
-        pdTRUE, // Auto reload
+        pdTRUE, 
         timer2_id,
         vTimerCallback);
 
@@ -99,9 +99,5 @@ void app_main(void)
     {
         xTimer1Started = xTimerStart(timer1, 0);
         xTimer2Started = xTimerStart(timer2, 0);
-        // if ((xTimer1Started == pdPASS) && (xTimer2Started == pdPASS))
-        // {
-        //     ;
-        // }
     }
 }
